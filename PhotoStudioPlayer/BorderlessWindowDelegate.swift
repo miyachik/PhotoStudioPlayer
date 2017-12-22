@@ -13,6 +13,7 @@ class BorderlessWindowDelegate: NSObject, NSWindowDelegate {
             return
         }
         window.styleMask = [.titled, .fullSizeContentView, .closable, .miniaturizable, .resizable]
+        window.ignoresMouseEvents = false
 
     }
     func windowDidResignKey(_ notification: Notification) {
@@ -20,5 +21,6 @@ class BorderlessWindowDelegate: NSObject, NSWindowDelegate {
             return
         }
         window.styleMask = [.fullSizeContentView, .borderless]
+        window.ignoresMouseEvents = true
     }
 }
